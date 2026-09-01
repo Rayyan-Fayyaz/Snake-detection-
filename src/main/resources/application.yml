@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: CatalogueManagement
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/snake_db?createDatabaseIfNotExist=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Mrayyan241204   # <-- change this to your MySQL root password
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update   # auto-creates/updates the "snake" table from the Snake entity
+    show-sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  graphql:
+    schema:
+      locations: classpath:graphql/
+    path: /graphql
+
+otel:
+  #exporter
+  exporter:
+    otlp:
+      endpoint: http://localhost:4317
+      protocol: grpc
+
+  #disable logs only export traces and metrics
+  logs:
+    exporter: none
+
+  # Resource attributes (tags for the service)
+  resource:
+    attributes:
+      service.name: CatalogueManagement
+
+  # Traces configuration
+  traces:
+    sampler: always_on
