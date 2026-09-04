@@ -1,3 +1,4 @@
+
 package com.finaltime.catalogue_management.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
