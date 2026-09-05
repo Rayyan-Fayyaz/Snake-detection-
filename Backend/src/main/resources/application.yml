@@ -1,19 +1,14 @@
-spring:
-  application:
-    name: CatalogueManagement
+spring.application.name=CatalogueManagement
 
-  datasource:
-    url: jdbc:mysql://localhost:3306/snake_db?createDatabaseIfNotExist=true
-    driverClassName: com.mysql.cj.jdbc.Driver
-    username: root
-    password: Mrayyan241204   # <-- change this to your MySQL root password
+spring.datasource.url=jdbc:mysql://localhost:3306/snake_db?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=Mrayyan241204
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-  jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
-    hibernate:
-      ddl-auto: update   # auto-creates/updates the "snake" table from the Snake entity
-    show-sql: true
-
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+    
   servlet:
     multipart:
       max-file-size: 10MB
